@@ -5,8 +5,8 @@ public class SoccerBallController : MonoBehaviour
     public GameObject area;
     [HideInInspector]
     public SoccerEnvController envController;
-    public string purpleGoalTag; //will be used to check if collided with purple goal
-    public string blueGoalTag; //will be used to check if collided with blue goal
+    public string purpleGoalTag; // 보라 팀 골 득점선
+    public string blueGoalTag; //블루 팀 골 득점선
 
     void Start()
     {
@@ -15,11 +15,11 @@ public class SoccerBallController : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.CompareTag(purpleGoalTag)) //ball touched purple goal
+        if (col.gameObject.CompareTag(purpleGoalTag)) //보라 팀 득점
         {
             envController.GoalTouched(Team.Blue);
         }
-        if (col.gameObject.CompareTag(blueGoalTag)) //ball touched blue goal
+        if (col.gameObject.CompareTag(blueGoalTag)) //블루 팀 득점
         {
             envController.GoalTouched(Team.Purple);
         }
