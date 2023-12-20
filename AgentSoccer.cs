@@ -11,13 +11,14 @@ public enum Team
 
 public class AgentSoccer : Agent
 {
-    // Note that that the detectable tags are different for the blue and purple teams. The order is
-    // * ball
-    // * own goal
-    // * opposing goal
-    // * wall
-    // * own teammate
-    // * opposing player
+    //  파란 팀과 보라 팀은 감지할 수 있는 태그들이 다릅니다. 순서는 다음과 같습니다.
+    // * 공
+    // * 자신의 골대
+    // * 상대 팀의 골대
+    // * 벽
+    // * 자신의 팀원
+    // * 상대 팀 선수
+
 
     public enum Position
     {
@@ -86,7 +87,7 @@ public class AgentSoccer : Agent
         m_ResetParams = Academy.Instance.EnvironmentParameters;
     }
 
-    public void MoveAgent(ActionSegment<int> act)
+    public void MoveAgent(ActionSegment<int> act) // 에이전트가 취할 수 있는 액션 
     {
         var dirToGo = Vector3.zero;
         var rotateDir = Vector3.zero;
